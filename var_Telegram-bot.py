@@ -28,7 +28,7 @@ def handle(msg):
 
     bot.sendMessage(chat_id, 'Estan pidiendo VAR'+ call_var_msg)
 
-bot = telepot.Bot(token) ## Poner el Token del bot en configuracion.py
+bot = telepot.Bot(token) ## Poner el Token mas arriba
 bot.message_loop(handle)
 
 while 1:
