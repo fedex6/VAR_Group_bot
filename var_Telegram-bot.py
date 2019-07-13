@@ -1,5 +1,6 @@
 #
-#	Telegram: @fedex6
+#   Telegram: @fedex6
+#   BOT: @VAR_Group_bot
 #
 #---------------------#
 
@@ -26,7 +27,7 @@ if command.startwith('/var'):
 
     bot.sendMessage(chat_id, 'Estan pidiendo VAR '+ call_var_msg)
 
-bot = telepot.Bot(token) ## Poner el Token del bot en configuracion.py
+bot = telepot.Bot(token) ## El Token esta al principio
 bot.message_loop(handle)
 
 while 1:
