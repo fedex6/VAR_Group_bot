@@ -24,7 +24,10 @@ def handle(msg):
     admins = bot.getChatAdministrators(chat_id)
     call_var_msg = ''
     for a in admins:
-      call_var_msg += ' @' + str(a['user']['username'])
+      try:
+        call_var_msg += ' @' + str(a['user']['username'])
+      except KeyError:
+        call_var_msg += ' ' + str(a['user']['first_name'].encode('ascii', 'ignore').decode('ascii')) + ','
 
     bot.sendMessage(chat_id, 'Estan pidiendo VAR'+ call_var_msg)
 
