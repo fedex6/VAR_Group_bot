@@ -18,7 +18,20 @@ token       =   '-- TOKEN --'
 
 def handle(msg):
   chat_id = msg['chat']['id']
-  command = msg['text']
+  g = telepot.glance(msg)
+
+  if g[0] ==  'left_chat_member':
+    if msg['left_chat_participant']['username'] != '':
+      arroba = ' (@' + str(msg['left_chat_participant']['username'].encode('ascii', 'ignore').decode('ascii')) + ')'
+    else :
+     arroba = ''
+
+    bot.sendMessage(chat_id, 'Que entre la camilla para ' + str(msg['left_chat_participant']['first_name'].encode('ascii', 'ignore').decode('ascii')) + arroba + ' que se va lesionado.')
+    #print(msg)
+    command = ''
+  else :
+    command = msg['text']
+  
 
   if command.startswith('/var'):
     admins = bot.getChatAdministrators(chat_id)
