@@ -44,6 +44,13 @@ def handle(msg):
 
     bot.sendMessage(chat_id, 'Estan pidiendo VAR'+ call_var_msg)
 
+  if command.startswith('/id'):
+    bot.sendMessage(chat_id, chat_id)
+
+  if command.startswith('ah') or command.startswith('ahre'):
+    bot.deleteMessage(telepot.message_identifier(msg))
+
+
 bot = telepot.Bot(token) ## Poner el Token mas arriba
 bot.message_loop(handle)
 
