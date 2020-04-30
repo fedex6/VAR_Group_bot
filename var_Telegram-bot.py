@@ -47,7 +47,7 @@ def handle(msg):
   if command.startswith('/id'):
     bot.sendMessage(chat_id, chat_id)
 
-  if command.startswith('ah') or command.startswith('ahre'):
+  if command == 'ah' or command == 'ahre': ## Borrar comentarios que solo tengan esto como palabra
     bot.deleteMessage(telepot.message_identifier(msg))
 
 
